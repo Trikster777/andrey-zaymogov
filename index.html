@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Лендинг психолога Андрея Займогова: помощь при тревоге и панических атаках онлайн." />
+  <title>Андрей Займогов — психолог по тревоге и паническим атакам</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f4efe7; --bg2:#fbf8f3; --surface:rgba(255,252,247,.78); --text:#2b2622; --soft:rgba(43,38,34,.72);
+      --primary:#121212; --accent:#c98a5a; --line:rgba(43,38,34,.12); --shadow:0 28px 70px rgba(18,18,18,.12);
+      --shadow2:0 16px 42px rgba(18,18,18,.08); --r-xl:2rem; --r-lg:1.5rem; --r-md:1rem; --container:1180px; --ease:cubic-bezier(.2,.8,.2,1);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Manrope",system-ui,sans-serif;color:var(--text);background:radial-gradient(circle at top left, rgba(201,138,90,.12), transparent 28%), linear-gradient(180deg,#f7f1e8 0%,#f3ede4 100%);overflow-x:hidden}
+    img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+    .container{width:min(var(--container),calc(100% - 2rem));margin:0 auto}
+    .section{padding:clamp(4rem,8vw,7rem) 0;position:relative}
+    .section+.section:before{content:"";position:absolute;left:50%;top:0;width:min(var(--container),calc(100% - 2rem));height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(43,38,34,.16),transparent)}
+    .kicker{display:inline-flex;align-items:center;gap:.55rem;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:800}
+    .kicker:before{content:"";width:2.1rem;height:1px;background:currentColor}
+    .section-title,.hero h1,.cta-band h2{font-family:"Cormorant Garamond",serif;letter-spacing:-.04em;line-height:.92;color:var(--primary)}
+    .section-title{margin:.9rem 0 0;font-size:clamp(2.1rem,4vw,4rem)}
+    .section-lead{margin:.95rem 0 0;max-width:56rem;color:var(--soft);font-size:clamp(1rem,1.3vw,1.08rem);line-height:1.8}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.55rem .9rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.84);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(16px)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:3.2rem;padding:.9rem 1.2rem;border-radius:999px;border:1px solid transparent;transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease);cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(18,18,18,.14)} .btn-primary{background:var(--primary);color:#fff} .btn-secondary{background:rgba(255,255,255,.66);color:var(--primary);border-color:var(--line);backdrop-filter:blur(12px)} .btn-accent{background:linear-gradient(135deg,#d89b6e,#c2784c);color:#fff}
+    .grid{display:grid;gap:1rem} .subgrid-2,.subgrid-3,.pain-grid,.workflow-grid,.benefits-grid,.trust-grid,.faq-grid{display:grid;gap:1rem;margin-top:1.8rem}
+    .card{position:relative;overflow:hidden;border-radius:var(--r-xl);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow2);backdrop-filter:blur(14px);transition:transform .28s var(--ease),border-color .28s var(--ease),box-shadow .28s var(--ease)}
+    .card:hover{transform:translateY(-4px);border-color:rgba(201,138,90,.34);box-shadow:var(--shadow)} .card-body{padding:clamp(1.2rem,2.2vw,1.6rem)}
+    .item-title{margin:0;font-size:1.08rem;line-height:1.35;letter-spacing:-.02em;color:var(--primary)} .item-text{margin:.7rem 0 0;color:var(--soft);line-height:1.75;font-size:.97rem}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)} .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+    .hero{position:relative;min-height:100svh;display:grid;align-items:stretch;color:#fff;overflow:clip;isolation:isolate;background:linear-gradient(110deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.92) 46%, rgba(17,17,17,.66) 100%)}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%, rgba(201,138,90,.24), transparent 28%), radial-gradient(circle at 80% 40%, rgba(255,255,255,.11), transparent 20%);z-index:-2}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(18,18,18,.15), rgba(18,18,18,.55)), linear-gradient(90deg, rgba(18,18,18,.12), transparent 42%);z-index:-1}
+    .hero-media{position:absolute;inset:0;z-index:-3;pointer-events:none}
+    .hero-media:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(18,18,18,.92) 0%, rgba(18,18,18,.72) 42%, rgba(18,18,18,.26) 100%);z-index:1}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(.88) contrast(.96) brightness(.9);transform:scale(1.02)}
+    .hero-inner{position:relative;z-index:2;min-height:100svh;display:grid;align-items:end;padding:1rem 0 1.25rem}
+    .hero-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:2rem}
+    .brand{display:inline-flex;align-items:center;gap:.8rem;color:#fff;font-weight:800;letter-spacing:-.03em} .brand-mark{width:2.6rem;height:2.6rem;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(201,138,90,.26));border:1px solid rgba(255,255,255,.15);font-family:"Cormorant Garamond",serif;font-size:1.2rem}
+    .top-nav{display:none;gap:1.2rem;align-items:center;color:rgba(255,255,255,.8);font-size:.95rem} .top-nav a{position:relative;padding-bottom:.15rem} .top-nav a:after{content:"";position:absolute;left:0;bottom:-.08rem;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s var(--ease)} .top-nav a:hover:after{transform:scaleX(1)}
+    .hero-copy{max-width:44rem;padding:clamp(1.2rem,4vw,3rem) 0 0} .hero h1{margin:0;font-size:clamp(3.2rem,7.2vw,6.9rem);text-wrap:balance}
+    .hero p{margin:1.25rem 0 0;max-width:36rem;font-size:clamp(1.03rem,1.6vw,1.2rem);line-height:1.85;color:rgba(255,255,255,.8)}
+    .hero-meta{display:grid;gap:.85rem;margin-top:1.5rem;color:rgba(255,255,255,.82);font-size:.96rem} .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+    .hero-note{margin-top:1rem;max-width:32rem;color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.7}
+    .hero-footer{display:grid;gap:.85rem;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.6}
+    .hero-footer strong{color:rgba(255,255,255,.92)}
+    .hero-visual{display:none;align-self:stretch;justify-self:end;width:min(40vw,28rem);margin-top:4.8rem;margin-right:clamp(0rem,2vw,1rem);border-radius:2.2rem;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 70px rgba(0,0,0,.22);background:rgba(255,255,255,.06);backdrop-filter:blur(12px);transform:translateY(2rem)}
+    .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;min-height:42rem}
+    .visual-caption{position:absolute;inset:auto 1rem 1rem 1rem;z-index:2;padding:.85rem 1rem;border-radius:1rem;background:rgba(18,18,18,.34);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.92);backdrop-filter:blur(12px);font-size:.92rem;line-height:1.55}
+    .hero-drift{position:absolute;inset:auto auto 8% 8%;width:min(42vw,26rem);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, rgba(201,138,90,.23) 0%, rgba(201,138,90,.08) 38%, transparent 72%);filter:blur(10px);z-index:-1;animation:float 14s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(18px,-14px,0) scale(1.06)}}
+
+    .quote-block{margin-top:1.8rem;padding:clamp(1.2rem,2vw,1.8rem);border-radius:var(--r-xl);border:1px solid rgba(201,138,90,.26);background:linear-gradient(135deg, rgba(201,138,90,.08), rgba(255,255,255,.5));box-shadow:var(--shadow2)}
+    .quote-block p{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,2.8vw,2.45rem);line-height:1.02;color:var(--primary);letter-spacing:-.03em} .quote-block span{display:block;margin-top:.9rem;color:var(--soft);line-height:1.75;font-size:1rem}
+    .timeline{position:relative;margin-top:1.8rem;padding-left:1rem;border-left:1px solid rgba(43,38,34,.14);display:grid;gap:1rem} .timeline-step{position:relative;padding-left:1rem} .timeline-step:before{content:"";position:absolute;left:-1.35rem;top:.35rem;width:.6rem;height:.6rem;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8e5d38);box-shadow:0 0 0 .45rem rgba(201,138,90,.12)}
+    .timeline-step h3,.faq-item summary h3{margin:0;font-size:1.04rem;line-height:1.35;color:var(--primary)} .timeline-step p{margin:.55rem 0 0;color:var(--soft);line-height:1.7}
+    .bullet{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:start} .bullet i{width:1.7rem;height:1.7rem;border-radius:50%;background:rgba(201,138,90,.12);border:1px solid rgba(201,138,90,.2);display:grid;place-items:center;color:var(--accent);font-style:normal;font-weight:800;margin-top:.1rem} .bullet strong{display:block;color:var(--primary);font-size:.98rem;line-height:1.45} .bullet span{display:block;margin-top:.25rem;color:var(--soft);line-height:1.68;font-size:.95rem}
+    .approach-panel{margin-top:1.8rem;border-radius:2rem;border:1px solid rgba(43,38,34,.12);overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,.66), rgba(248,243,236,.78));box-shadow:var(--shadow2)} .approach-top{display:grid;gap:1rem;grid-template-columns:1fr;padding:1.2rem;border-bottom:1px solid rgba(43,38,34,.08)} .approach-bullets{display:grid;gap:.8rem;padding:1.2rem}
+    .trust-note{margin-top:1rem;padding:1rem 1.1rem;border-radius:1rem;background:rgba(201,138,90,.08);border:1px solid rgba(201,138,90,.18);line-height:1.72}
+    .faq-item summary{list-style:none;cursor:pointer} .faq-item summary::-webkit-details-marker{display:none} .faq-head{display:flex;align-items:center;justify-content:space-between;gap:1rem} .icon{width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:rgba(201,138,90,.12);color:var(--accent);transition:transform .28s var(--ease),background .28s var(--ease)} .faq-item[open] .icon{transform:rotate(45deg);background:rgba(201,138,90,.18)} .faq-content{margin:.85rem 0 0;color:var(--soft);line-height:1.75}
+    .cta-band{margin-top:2rem;padding:clamp(1.3rem,2.4vw,2rem);border-radius:2rem;background:radial-gradient(circle at left top, rgba(201,138,90,.18), transparent 36%), linear-gradient(135deg,#171513 0%,#26211e 100%);color:#fff;box-shadow:var(--shadow)} .cta-band h2{margin:0;font-size:clamp(2rem,4.2vw,3.4rem)} .cta-band p{margin:.9rem 0 0;max-width:46rem;color:rgba(255,255,255,.8);line-height:1.75} .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+    .footer{padding:2rem 0 7rem;color:var(--soft)} .footer-inner{display:grid;gap:1rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.95rem;line-height:1.7} .footer-links{display:flex;flex-wrap:wrap;gap:.9rem 1.2rem;align-items:center} .footer-links a{color:var(--primary);font-weight:600}
+    .mobile-cta{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:30;display:flex;gap:.75rem;padding:.75rem;border-radius:1.35rem;background:rgba(255,251,245,.76);border:1px solid rgba(43,38,34,.12);box-shadow:0 20px 42px rgba(18,18,18,.18);backdrop-filter:blur(16px)} .mobile-cta .btn{flex:1;min-width:0;font-size:.96rem}
+    .skip{position:absolute;left:-999px;top:1rem;background:#fff;color:#000;padding:.7rem 1rem;border-radius:999px;z-index:100}.skip:focus{left:1rem}
+    @media (min-width:760px){.subgrid-2,.pain-grid,.workflow-grid,.benefits-grid,.faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.subgrid-3,.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.approach-top{grid-template-columns:1.1fr .9fr;align-items:end}.footer-inner{grid-template-columns:1.4fr .9fr;align-items:center}}
+    @media (min-width:960px){.top-nav{display:inline-flex}.hero-inner{grid-template-columns:minmax(0,1.1fr) minmax(22rem,.8fr);align-items:center;gap:1rem}.hero-copy{align-self:end;padding-bottom:3rem}.hero-visual{display:block}.hero-media:before{background:linear-gradient(90deg, rgba(18,18,18,.92) 0%, rgba(18,18,18,.72) 34%, rgba(18,18,18,.12) 100%)}}
+    @media (max-width:959px){.desktop-only{display:none!important}.hero-visual{display:none}} @media (max-width:759px){.footer{padding-bottom:10rem}} @media (min-width:760px){.mobile-cta{display:none}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Перейти к содержанию</a>
+  <header class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <img src="file:///C:/Users/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9/Desktop/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D0%BE%D1%80%201.jpg" alt="" />
+    </div>
+    <div class="hero-drift" aria-hidden="true"></div>
+    <div class="hero-inner container">
+      <div class="hero-copy reveal">
+        <div class="hero-top">
+          <a class="brand" href="#top"><span class="brand-mark">А</span><span>Андрей Займогов</span></a>
+          <nav class="top-nav desktop-only" aria-label="Навигация">
+            <a href="#problems">Ощущения</a><a href="#method">Подход</a><a href="#faq">FAQ</a><a href="#contact">Контакты</a>
+          </nav>
+        </div>
+        <span class="eyebrow">Психолог по тревоге и паническим атакам</span>
+        <h1>Перестаньте жить в ожидании, что сейчас снова накроет.</h1>
+        <p>Онлайн-консультация, на которой становится понятнее, что с вами происходит, почему состояние держится так крепко и как из этого можно выходить без бесконечного внутреннего контроля.</p>
+        <div class="hero-meta">
+          <span>Онлайн</span><span>7 000 ₽ за консультацию</span><span>Если после первой встречи не будет изменений, её можно не оплачивать</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-accent" href="mailto:zaymogovandrey@gmail.com?subject=Запись%20на%20консультацию">Записаться на консультацию</a>
+          <a class="btn btn-secondary" href="#method">Как проходит первая встреча</a>
+        </div>
+        <p class="hero-note">Для людей, которые устали держаться, всё время ждать плохого, бояться своих ощущений и уже не хотят просто заглушать тревогу на время.</p>
+        <div class="hero-footer"><div><strong>Ключевая идея:</strong> не просто снять напряжение, а помочь увидеть и изменить механизм, который снова и снова возвращает тревогу и страх паники.</div></div>
+      </div>
+      <aside class="hero-visual reveal" aria-label="Фото специалиста">
+        <img src="file:///C:/Users/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9/Desktop/%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D0%BE%D1%80%201.jpg" alt="Андрей Займогов" />
+        <div class="visual-caption">Андрей Займогов работает бережно и без лишней теории, чтобы уже с первой встречи стало спокойнее и понятнее, что делать дальше.</div>
+      </aside>
+    </div>
+  </header>
+  <main id="content">
+    <section class="section reveal" id="problems">
+      <div class="container">
+        <span class="kicker">Что забирает тревога</span>
+        <h2 class="section-title">Она не остаётся только внутри головы.</h2>
+        <p class="section-lead">Тревога и панические атаки постепенно забирают внимание, силы и ощущение нормальной жизни. Сначала это похоже на “просто усталость”, а потом становится фоном, через который проходит всё: работа, отношения, тело, сон и способность расслабляться.</p>
+        <div class="pain-grid">
+          <article class="card"><div class="card-body"><h3 class="item-title">Работа и повседневность</h3><p class="item-text">Становится труднее концентрироваться, выдерживать нагрузку и не срываться в прокручивание сценариев. Много сил уходит не на жизнь, а на попытку удержать себя в порядке.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Тело и ощущения</h3><p class="item-text">Любое необычное ощущение начинает настораживать. Появляется страх самой реакции тела, и из-за этого напряжение только усиливается.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Отношения и близость</h3><p class="item-text">Сложнее быть рядом спокойно. Внутри слишком много контроля, раздражения и ожидания, что сейчас станет хуже, и это отражается на общении с близкими.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Качество жизни</h3><p class="item-text">Со временем тревога становится не эпизодом, а привычным фоном. Возникает ощущение, что вы не живёте, а всё время выдерживаете что-то напряжённое.</p></div></article>
+        </div>
+        <div class="quote-block">
+          <p>“Я как будто всё время жду, что сейчас что-то случится.”</p>
+          <span>Это не слабость и не “накручивание ради накручивания”. Так часто выглядит состояние, в котором человек слишком долго живёт на внутреннем напряжении и не получает от него настоящего выхода.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Что обычно не говорят вслух</span>
+        <h2 class="section-title">Сомнения, с которыми приходят молча.</h2>
+        <p class="section-lead">Перед записью у человека часто есть не только страх симптомов, но и стыд, усталость и сомнения, в которых не очень хочется признаваться даже себе.</p>
+        <div class="subgrid-2">
+          <article class="card"><div class="card-body"><h3 class="item-title">“Я уже столько всего пробовал(а), и вдруг это снова не поможет?”</h3><p class="item-text">После множества попыток человек нередко приходит с недоверием к любому обещанию. Поэтому важны не громкие слова, а ясная работа с тем, что именно удерживает состояние.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">“А вдруг со мной что-то серьёзнее, чем тревога?”</h3><p class="item-text">Страх собственных ощущений быстро превращается в постоянную проверку себя. И чем сильнее контроль, тем меньше остаётся пространства для спокойствия.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">“Если я расслаблюсь, станет только хуже.”</h3><p class="item-text">Для человека в тревоге расслабление часто ощущается не как отдых, а как риск. С этим важно работать бережно, без давления и без попытки “просто успокоиться”.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">“Я устал(а) делать вид, что всё нормально.”</h3><p class="item-text">Когда столько сил уходит на внешнюю собранность, внутри накапливается ощущение одиночества, напряжения и скрытого истощения.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Для кого это</span>
+        <h2 class="section-title">Если вы устали жить на фоне напряжения.</h2>
+        <p class="section-lead">Эта работа подходит тем, кто узнаёт себя в постоянной настороженности, ожидании плохого и страхе новых приступов тревоги или паники.</p>
+        <div class="subgrid-3">
+          <article class="card"><div class="card-body"><h3 class="item-title">Вы всё время ждёте, что что-то пойдёт не так</h3><p class="item-text">Даже если внешне всё спокойно, внутри не получается выдохнуть. Состояние словно не отпускает ни на минуту.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Вы боитесь собственных реакций и ощущений</h3><p class="item-text">Сердцебиение, напряжение, слабость, нехватка воздуха — всё это может пугать само по себе и запускать новый круг тревоги.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Вы уже устали держаться</h3><p class="item-text">Когда состояние длится долго, человеку нужен не совет “не переживать”, а внятный, бережный и понятный способ сдвинуться с места.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Что уже пробовали</span>
+        <h2 class="section-title">Многие приходят не с пустыми руками.</h2>
+        <p class="section-lead">Обычно за плечами уже есть попытки успокоиться, отвлечься, “перетерпеть” и взять себя в руки. Это не значит, что человек что-то сделал неправильно. Это значит, что проблема держится глубже, чем кажется.</p>
+        <div class="benefits-grid">
+          <article class="card"><div class="card-body"><h3 class="item-title">Успокоительные и попытки быстро снять симптомы</h3><p class="item-text">Могут помочь на время, но не меняют сам механизм, который снова и снова запускает тревогу и страх паники.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Дыхательные практики, медитации и отдых</h3><p class="item-text">Иногда дают передышку, но если внутри по-прежнему много страха, облегчение остаётся временным.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Самоконтроль и попытки “собраться”</h3><p class="item-text">Чем сильнее человек старается всё удержать, тем больше напряжения копится внутри. Постоянный контроль сам по себе выматывает.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Предыдущий опыт психотерапии</h3><p class="item-text">Иногда помощь была, но не хватило именно глубины, ясности или быстрого внутреннего сдвига на старте.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="method">
+      <div class="container">
+        <span class="kicker">Почему это не уходит само</span>
+        <h2 class="section-title">Тревога питается не только симптомами, а циклом, который сам себя закрепляет.</h2>
+        <p class="section-lead">Когда человек пугается своего состояния, начинает сильнее контролировать себя, проверять ощущения и ждать повторения, тревога получает ещё больше энергии. Так появляется замкнутый круг, из которого сложно выйти усилием воли.</p>
+        <div class="timeline">
+          <div class="timeline-step"><h3>1. Появляется ощущение или мысль</h3><p>Тело, дыхание, сердцебиение, сон или любая другая реакция вдруг становятся заметнее обычного.</p></div>
+          <div class="timeline-step"><h3>2. Включается страх</h3><p>Человек начинает думать: “Сейчас станет хуже”, “Я не справлюсь”, “Со мной что-то не так”.</p></div>
+          <div class="timeline-step"><h3>3. Усиливается контроль</h3><p>Появляются проверки, попытки успокоить себя, отвлечься, всё объяснить или срочно убрать состояние.</p></div>
+          <div class="timeline-step"><h3>4. Тревога закрепляется</h3><p>Потому что психика начинает воспринимать саму тревогу как угрозу. И круг повторяется снова.</p></div>
+        </div>
+        <div class="quote-block"><p>Задача работы — не заглушить цикл, а изменить то, что его поддерживает.</p><span>Когда это начинает проясняться, у человека постепенно появляется меньше внутреннего хаоса, больше спокойствия и больше доверия к себе.</span></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Первая встреча</span>
+        <h2 class="section-title">Чтобы не идти в неизвестность, важно заранее понять, как всё будет устроено.</h2>
+        <p class="section-lead">На первой консультации нет задачи “вытянуть всё сразу”. Важнее аккуратно разобрать ситуацию, увидеть, что именно удерживает состояние, и уже в процессе почувствовать первый внутренний сдвиг.</p>
+        <div class="workflow-grid">
+          <article class="card"><div class="card-body"><h3 class="item-title">Сначала разбираем, что именно происходит</h3><p class="item-text">Смотрим на тревогу, панические атаки, мысли, реакции тела, страхи и то, как это проявляется именно у вас.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Потом становится понятнее, что удерживает состояние</h3><p class="item-text">Человек часто впервые видит не только симптом, а механизм, который его запускает и поддерживает.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Работа начинается уже на старте</h3><p class="item-text">Задача первой встречи — не растянуть знакомство, а дать ощущение ясности, безопасности и движения.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Вы уходите не в растерянности</h3><p class="item-text">После встречи должно быть ощущение, что состояние можно разбирать и менять, а не просто “терпеть дальше”.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Что становится возможным</span>
+        <h2 class="section-title">Больше спокойствия, меньше внутреннего шума.</h2>
+        <p class="section-lead">Результат в этой работе не про “навсегда забыть о тревоге” за один раз. Речь о том, чтобы вернуть себе больше устойчивости, ясности и свободы жить, а не постоянно прислушиваться к себе.</p>
+        <div class="subgrid-2">
+          <article class="card"><div class="card-body"><h3 class="item-title">Понимание, что с вами происходит</h3><p class="item-text">Когда состояние становится объяснимым, уходит часть страха и случайности. Появляется ясность, а с ней и больше внутренней опоры в действии.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Меньше страха своих ощущений</h3><p class="item-text">Состояние перестаёт быть чем-то, что пугает само по себе. Это меняет ежедневную реакцию на тело и мысли.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Больше спокойствия в обычной жизни</h3><p class="item-text">Становится легче работать, общаться, отдыхать и не проваливаться в постоянную внутреннюю настороженность.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Возвращение ощущения, что вы не сломаны</h3><p class="item-text">Человек перестаёт воспринимать себя как “слишком тревожного” или “неправильного”. Вместо этого появляется ощущение, что выход есть.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="approach">
+      <div class="container">
+        <span class="kicker">Особенность подхода</span>
+        <h2 class="section-title">Бережно, понятно и без затягивания.</h2>
+        <p class="section-lead">Подход Андрея строится не на поверхностном успокоении, а на работе с тем, что реально поддерживает тревогу. При этом язык остаётся простым, без перегруза терминологией и без давления на человека.</p>
+        <div class="approach-panel">
+          <div class="approach-top">
+            <div>
+              <h3 class="item-title" style="font-size:1.3rem;">Что важно в этой работе</h3>
+              <p class="item-text">Не ломать человека и не подгонять его под красивую схему, а помогать ему начать понимать себя и выходить из напряжения в своём темпе.</p>
+            </div>
+            <div class="card" style="background:rgba(255,255,255,.62);box-shadow:none"><div class="card-body"><p class="item-title" style="font-size:1.18rem">Позиция</p><p class="item-text">Спокойная, уважительная и очень конкретная. Без пустых обещаний, без давления, без работы “на отвяжись”.</p></div></div>
+          </div>
+          <div class="approach-bullets">
+            <div class="bullet"><i>1</i><div><strong>Не только про симптомы</strong><span>Разбираемся, почему тревога снова и снова возвращается, вместо того чтобы просто бороться с её проявлениями.</span></div></div>
+            <div class="bullet"><i>2</i><div><strong>Понятным языком</strong><span>Сложные вещи объясняются так, чтобы человеку стало легче ориентироваться в происходящем, а не тяжелее.</span></div></div>
+            <div class="bullet"><i>3</i><div><strong>Сдвиг уже на первой встрече</strong><span>Задача старта — не растянуть знакомство, а дать ощущение ясности, безопасности и движения.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="trust">
+      <div class="container">
+        <span class="kicker">Доверие</span>
+        <h2 class="section-title">Здесь показываются только подтверждённые факты.</h2>
+        <p class="section-lead">Если у специалиста пока нет переданных данных об образовании, стаже и сертификатах, лучше не придумывать их на сайте. Сейчас я вывожу только то, что можно проверить прямо сейчас.</p>
+        <div class="trust-grid">
+          <article class="card"><div class="card-body"><p class="item-title" style="font-size:1.9rem;font-weight:800">Онлайн</p><p class="item-text">Формат подходит тем, кто хочет получить помощь без лишней логистики и с возможностью спокойно подключиться из привычного места.</p></div></article>
+          <article class="card"><div class="card-body"><p class="item-title" style="font-size:1.9rem;font-weight:800">7 000 ₽</p><p class="item-text">Стоимость консультации прозрачна и указана сразу, без скрытых условий и лишних “уточнений в личке”.</p></div></article>
+          <article class="card"><div class="card-body"><p class="item-title" style="font-size:1.9rem;font-weight:800">Гарантия</p><p class="item-text">Если после первой встречи не почувствуете изменений, консультацию можно не оплачивать. Это спокойная и честная точка входа.</p></div></article>
+          <article class="card"><div class="card-body"><p class="item-title" style="font-size:1.9rem;font-weight:800">Контакт</p><p class="item-text"><a href="mailto:zaymogovandrey@gmail.com">zaymogovandrey@gmail.com</a><br>@zaymogovandrey</p></div></article>
+        </div>
+        <div class="trust-note">Для блока об образовании, опыте и сертификатах нужны реальные подтверждённые данные. Пока их нет в исходных материалах, поэтому на сайте лучше показывать только проверяемые факты, а не заполнять доверие выдуманными деталями.</div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <span class="kicker">Гарантия</span>
+        <h2 class="section-title">Спокойный вход без ощущения риска.</h2>
+        <p class="section-lead">Гарантия здесь нужна не для агрессивного давления, а чтобы человеку в тревоге было проще решиться на первый шаг. Если после первой встречи не появится ощущение изменений, её не нужно оплачивать.</p>
+        <div class="subgrid-2">
+          <article class="card"><div class="card-body"><h3 class="item-title">Что это даёт клиенту</h3><p class="item-text">Снижается страх ошибиться с выбором специалиста и появляется более спокойное ощущение, что первый шаг не превратится в пустую трату денег и сил.</p></div></article>
+          <article class="card"><div class="card-body"><h3 class="item-title">Как это звучит на сайте</h3><p class="item-text">“Если после первой встречи вы не почувствуете изменений, вы можете её не оплачивать.” Коротко, взрослым языком и без лишнего нажима.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="faq">
+      <div class="container">
+        <span class="kicker">FAQ</span>
+        <h2 class="section-title">Ответы на вопросы, которые обычно мешают записаться.</h2>
+        <p class="section-lead">Здесь собраны вопросы, которые часто возникают у человека в тревоге до первой консультации. Их важно закрыть заранее, чтобы снизить напряжение перед записью.</p>
+        <div class="faq-grid">
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Что, если я не смогу нормально объяснить, что со мной происходит?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Это нормально. На первой встрече не нужно говорить идеально или приносить готовую формулировку. Достаточно прийти с тем, что есть, и мы вместе разберёмся, как устроено ваше состояние.</div></details>
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Если у меня именно панические атаки, а не просто тревога?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Это как раз одна из ключевых тем работы. Панические атаки важно не только переживать, но и понимать, почему они запускаются и что удерживает страх их повторения.</div></details>
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Сколько встреч понадобится?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Это зависит от глубины состояния, длительности тревоги и того, как именно она проявляется. Уже первая встреча должна дать больше ясности, а дальше работа выстраивается по ситуации.</div></details>
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Как проходит онлайн-формат?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Встреча проходит в удобном онлайн-формате, без необходимости куда-то ехать. Это помогает снизить лишнее напряжение и выбрать спокойное место для разговора.</div></details>
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Что, если я боюсь, что станет хуже, когда начну говорить?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Поэтому и важен бережный темп. Работа строится так, чтобы не перегружать человека и не толкать его глубже, чем он сейчас может выдержать.</div></details>
+          <details class="card"><summary class="card-body"><div class="faq-head"><h3>Нужно ли готовиться к встрече заранее?</h3><span class="icon">+</span></div></summary><div class="card-body faq-content">Нет. Если захотите, можно просто выписать, что больше всего беспокоит. Но обязательной подготовки не нужно: важно не принести “идеальный кейс”, а прийти в живом состоянии.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-band">
+          <span class="eyebrow">Запись на консультацию</span>
+          <h2>Если вы устали жить в постоянной тревоге, начните с первой встречи.</h2>
+          <p>Она нужна, чтобы стало понятнее, что с вами происходит, уменьшилось внутреннее напряжение и появилось ощущение, что из этого состояния есть выход.</p>
+          <div class="actions">
+            <a class="btn btn-accent" href="mailto:zaymogovandrey@gmail.com?subject=Запись%20на%20консультацию">Записаться на консультацию</a>
+            <a class="btn btn-secondary" href="mailto:zaymogovandrey@gmail.com?subject=Вопрос%20перед%20записью">Задать вопрос</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-inner">
+        <div><strong style="color:var(--primary)">Андрей Займогов</strong><br>Психолог по тревоге и паническим атакам. Онлайн. 7 000 ₽ за консультацию.</div>
+        <div class="footer-links"><a href="mailto:zaymogovandrey@gmail.com">zaymogovandrey@gmail.com</a><span>@zaymogovandrey</span><a href="#content">Наверх</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Быстрая запись">
+    <a class="btn btn-accent" href="mailto:zaymogovandrey@gmail.com?subject=Запись%20на%20консультацию">Записаться</a>
+    <a class="btn btn-secondary" href="mailto:zaymogovandrey@gmail.com?subject=Вопрос%20по%20консультации">Написать</a>
+  </div>
+
+  <script>
+    (() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      const hero = document.querySelector('.hero');
+      const media = document.querySelector('.hero-media img');
+      let raf = null;
+      const move = (event) => {
+        if (window.matchMedia('(max-width: 959px)').matches) return;
+        const rect = hero.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          media.style.transform = `scale(1.04) translate3d(${(x - 0.5) * 12}px, ${(y - 0.5) * 10}px, 0)`;
+        });
+      };
+      const reset = () => {
+        if (raf) cancelAnimationFrame(raf);
+        media.style.transform = 'scale(1.02) translate3d(0,0,0)';
+      };
+      hero.addEventListener('mousemove', move);
+      hero.addEventListener('mouseleave', reset);
+    })();
+  </script>
+</body>
+</html>
